@@ -1,27 +1,49 @@
-# ApicarsWebFrontend
+<h1 align="center">
+    FRONTEND PARA A API REST DE USUÁRIOS E SEUS CARROS
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-pré-requisitos">Pré-requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-executando">Executando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-buildando">Buildando</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-testes-unitários">Testes unitários</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-autor">Autor</a>
+</p>
 
-## Development server
+<br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 💻 Projeto
 
-## Code scaffolding
+**FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico da vaga de Eng. De Software Pleno pela Pitang.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📝 Pré-requisitos
 
-## Build
+Para contribuir com o projeto é necessário os seguintes requisitos:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- GIT,
+- [Node 16.20.2](https://nodejs.org/en/download/current),
+- NPM 8.19.4,
+- [Angular CLI 14.0.7](https://angular.io/cli),
+- IDE JavaScrip da sua escolha (recomendação: [VsCode](https://code.visualstudio.com/)).
 
-## Running unit tests
+## 🚀 Tecnologias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Esse projeto foi desenvolvido utilizando o framework [Angular](https://github.com/angular/angular-cli) version 14.0.3. Para ver quais são todas as dependências do projeto basta abrir o arquivo **package.json**.
 
-## Running end-to-end tests
+## ⚙️ Executando
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Rode `ng serve` rodar o projeto em ambiente local. Ele vai abrir na URL `http://localhost:4200/`. Essa aplicação tem auto reload caso vocÊ faça alguma alteração nos arquivos do projeto.
 
-## Further help
+## 💻 Buildando
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Rode `ng build` para buildar o projeto. Após o build os arquivos gerados estarão salvos na pasta `dist/`.
+
+## 🐞 Testes unitários
+
+O projeto Angular já vem com o Karma configurado para testes, porém a ideia seria alterar para urilizar o Jest e o Test library. Caso você esteja trabalhando no projeto e se depare com o Karma saiba que não deu tempo de trocar as libs kkkkk. Basta rodar o comando `ng test` para executar os testes unitários via [Karma](https://karma-runner.github.io).
+
+## 📝 Autor
+
+Por **Thiago Lourenço** dá uma olhadinha no [LinkedIn](https://www.linkedin.com/in/thiiagolourenco) e no meu [Medium](https://thiiagolourenco.medium.com/) ✌🏽 
