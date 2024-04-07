@@ -16,7 +16,7 @@
 
 ## 💻 Projeto
 
-**FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico da vaga de Eng. De Software Pleno pela Pitang.
+**FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico.
 
 ## 📝 Pré-requisitos
 
@@ -31,6 +31,13 @@ Para contribuir com o projeto é necessário os seguintes requisitos:
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido utilizando o framework [Angular](https://github.com/angular/angular-cli) version 14.0.3. Para ver quais são todas as dependências do projeto basta abrir o arquivo **package.json**.
+
+## 🏗️ Arquitetura e estrutura de pastas
+
+Esse projeto foi organizado utilizando dois módulos principais: **Core e Shared**. No primeiro com o módulo da aplicação (app.module.ts...) e autenticação (authentication.module.ts). Já no segundo temos os módulos comuns da aplicação. Para facilitar o entendimento veja a imagem abaixo:
+<div style="display:flex;align-items:center;">
+    <img src="/src/assets/architecture.png" title="Architecture" alt="Project architecture" width="560px" />
+</div>
 
 ## ⚙️ Executando
 
