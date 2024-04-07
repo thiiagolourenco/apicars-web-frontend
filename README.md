@@ -16,7 +16,7 @@
 
 ## 💻 Projeto
 
-**FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico da vaga de Eng. De Software Pleno pela Pitang.
+**FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico.
 
 ## 📝 Pré-requisitos
 
