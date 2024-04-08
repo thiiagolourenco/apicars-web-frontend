@@ -11,6 +11,6 @@ import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [UserTableComponent, UsersListComponent, DialogComponent],
-  imports: [CommonModule, SharedModule, MaterialModule, UsersRoutingModule],
+  imports: [SharedModule, MaterialModule, UsersRoutingModule],
 })
 export class UsersModule {}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/auth/services/auth.service';
 
 @Component({
   selector: 'apicars-toolbar',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   navigateToUsers(): void {
     this.router.navigate(['/users']);
@@ -15,5 +16,9 @@ export class ToolbarComponent {
 
   navigateToCars(): void {
     this.router.navigate(['/cars']);
+  }
+
+  isCarDisabeld(): boolean {
+    return !this.authService.isLoggedIn();
   }
 }
