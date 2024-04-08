@@ -1,0 +1,53 @@
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 8px;
+
+  h1 {
+    color: var(--color-primary-light);
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 16px;
+
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 6px;
+
+      width: 100%;
+
+      width: 100%;
+
+      mat-form-field {
+        width: 260px;
+      }
+    }
+
+    button {
+      width: 260px;
+      height: 40px;
+
+      background-color: var(--color-primary);
+      color: var(--color-background);
+    }
+  }
+
+  .register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 4px;
+  }
+}
