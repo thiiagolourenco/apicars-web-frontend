@@ -3,20 +3,20 @@
     <div class="card">
         <h1>Login</h1>
 
-        <form class="form-container" [formGroup]="loginForm">
+        <form class="form-container" [formGroup]="registerForm">
             <div>
                 <mat-form-field appearance="outline" class="form-full-width">
                     <mat-label>Informe seu login</mat-label>
                     <input matInput formControlName="login" autocomplete="off"/>
-                    <mat-error *ngIf="loginForm.get('login')">{{getErrorMessage()}}</mat-error>
+                    <mat-error *ngIf="registerForm.get('login')">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-full-width">
                     <mat-label>Informe sua senha</mat-label>
                     <input matInput formControlName="password" autocomplete="off" type="password"/>
-                    <mat-error *ngIf="loginForm.get('password')">{{getErrorMessage()}}</mat-error>
+                    <mat-error *ngIf="registerForm.get('password')">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </div>
-            <button mat-raised-button  aria-label="login button" (click)="login()" [disabled]="submitted">Entrar</button>
+            <button mat-raised-button (click)="register()" [disabled]="submitted">Cadastrar</button>
         </form>
         
         <div class="register">

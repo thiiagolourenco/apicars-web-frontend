@@ -5,16 +5,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
     SharedModule,
+    MaterialModule,
     FormsModule,
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegisterComponent],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -3,14 +3,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'apicars-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'apicars-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
-export class LoginComponent {
+export class RegisterComponent {
   public submitted = false;
 
-  public loginForm = this.fb.group({
+  public registerForm = this.fb.group({
     login: ['', Validators.required],
     password: ['', Validators.required],
   });
@@ -22,13 +22,13 @@ export class LoginComponent {
     private fb: FormBuilder
   ) {}
 
-  login(): void {
+  register(): void {
     this.submitted = true;
     const validEmail = this.emailValid(
-      this.loginForm.controls['login'].value || ''
+      this.registerForm.controls['login'].value || ''
     );
     const validPassword = this.passwordValid(
-      this.loginForm.controls['password'].value || ''
+      this.registerForm.controls['password'].value || ''
     );
 
     if (validEmail && validPassword) {
