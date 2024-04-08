@@ -53,7 +53,7 @@ O projeto Angular já vem com o Karma configurado para testes, porém a ideia se
 
 ## 🧗 Deploy
 
-Para realizar o deploy da aplicação primeiro
+Para realizar o deploy da aplicação utilizou-se a ferramenta [Netlify](https://app.netlify.com/). Para realizar o deploy, temos dois caminhos sendo o primeiro com pipeline já criado pela ferramenta e o outro através da pasta dist. No primeiro caso basta conectar o repositório com a sua conta na plataforma. Após isso é necessário realizar algumas configurações para setar o environment (no arquivo com esse nome dentro do projeto temos as variáveis de ambiente e seus valores). Caso não tenha um usuário Netlify cadastrado com um repositório você pode ir para o segundo caso e gerar a pasta dis e coloca-lá na plataforma e realizar as mesmas configurações de ambiente.
 
 ## 📝 Autor
 
