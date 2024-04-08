@@ -1,7 +1,7 @@
-import { Car } from './car.model';
-import { Role } from './role.model';
+import { Role } from 'src/app/core/auth/models/role.model';
+import { Car } from '../../cars/models/car.model';
 
-export class Register {
+export class User {
   constructor(
     public firstName: string,
     public lastName: string,
