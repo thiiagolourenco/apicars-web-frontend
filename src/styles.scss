@@ -13,14 +13,14 @@
     margin: 0;
     width: 100%;
     background-color: var(--color-background);
-    font-family: Roboto, Nunito, "Helvetica Neue", sans-serif;
+    font-family: Roboto, Nunito, sans-serif;
   }
   
   :root {
     --color-background: #ffffff;
     
-    --color-primary: #730004;
-    --color-primary-light: #af242a;
+    --color-primary: #0d47a1;
+    --color-primary-light: #3469b8;
 
     --dark-grey: #333333;
     --light-grey: #808080;
@@ -31,4 +31,26 @@
     --yellow: #FFB612;
     --red: #dc0a17;
     --green: #2FC022;
+}
+
+.config-success-snackbar {
+  background: var(--green) !important;
+  color: var(--color-background) !important;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 7px;
+}
+
+.config-error-snackbar {
+  background: var(--red) !important;
+  color: var(--color-background) !important;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 7px;
+}
+
+.mat-typography {
+  p, h1, h2, h3, span, strong {
+    margin: 0;
+  }
 }
