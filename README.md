@@ -45,7 +45,8 @@ Rode `ng serve` rodar o projeto em ambiente local. Ele vai abrir na URL `http://
 
 ## 💻 Buildando
 
-Rode `ng build` para buildar o projeto. Após o build os arquivos gerados estarão salvos na pasta `dist/`.
+Rode `ng build` para buildar o projeto. Após o build os arquivos gerados estarão salvos na pasta `dist/apicars-web-frontend
+`.
 
 ## 🐞 Testes unitários
 
