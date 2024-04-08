@@ -30,7 +30,7 @@ Para contribuir com o projeto é necessário os seguintes requisitos:
 
 ## 🚀 Tecnologias
 
-Esse projeto foi desenvolvido utilizando o framework [Angular](https://github.com/angular/angular-cli) version 14.0.3. Para ver quais são todas as dependências do projeto basta abrir o arquivo **package.json**.
+Esse projeto foi desenvolvido utilizando o framework [Angular](https://github.com/angular/angular-cli) version 14.0.3 junto a biblioteca de componentes [Material Design UI](https://material.angular.io/) com o objetivo de acelerar o desenvolvimento. Para ver quais são todas as dependências do projeto basta abrir o arquivo **package.json**.
 
 ## 🏗️ Arquitetura e estrutura de pastas
 
