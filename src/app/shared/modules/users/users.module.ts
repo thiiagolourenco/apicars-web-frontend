@@ -7,9 +7,10 @@ import { SharedModule } from '../../shared.module';
 
 import { UserTableComponent } from './components/table/user-table.component';
 import { UsersListComponent } from './pages/users-list/users-list.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [UserTableComponent, UsersListComponent],
+  declarations: [UserTableComponent, UsersListComponent, DialogComponent],
   imports: [CommonModule, SharedModule, MaterialModule, UsersRoutingModule],
 })
 export class UsersModule {}

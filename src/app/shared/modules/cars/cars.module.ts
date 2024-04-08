@@ -7,9 +7,10 @@ import { SharedModule } from '../../shared.module';
 
 import { CarTableComponent } from './components/table/car-table.component';
 import { CarsListComponent } from './pages/cars-list/cars-list.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [CarTableComponent, CarsListComponent],
+  declarations: [CarTableComponent, CarsListComponent, DialogComponent],
   imports: [CommonModule, SharedModule, MaterialModule, CarsRoutingModule],
 })
 export class CarsModule {}
