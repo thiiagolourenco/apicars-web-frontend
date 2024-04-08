@@ -1,13 +1,15 @@
 export class Car {
   constructor(
+    public id: number,
     public user: number,
-    public year: string,
+    public yeear: string,
     public licensePlate: string,
     public model: string,
     public color: string
   ) {
+    this.id = id;
     this.user = user;
-    this.year = year;
+    this.yeear = yeear;
     this.licensePlate = licensePlate;
     this.model = model;
     this.color = color;

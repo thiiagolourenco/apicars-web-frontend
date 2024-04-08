@@ -2,10 +2,10 @@
   <img src="assets/favicon.png" alt="APICARS logo" width="40px" height="25px"/>
   <span>API CARS</span>
   <span class="spacer"></span>
-  <button mat-button aria-label="users button">
+  <button mat-button aria-label="users button" (click)="navigateToUsers()">
     Usuários
   </button>
-  <button mat-button aria-label="cars button" disabled>
+  <button mat-button aria-label="cars button" (click)="navigateToCars()">
     Carros
   </button>
   <button mat-icon-button aria-label="Logout icon button">
