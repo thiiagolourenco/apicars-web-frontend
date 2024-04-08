@@ -11,8 +11,13 @@ export class RegisterComponent {
   public submitted = false;
 
   public registerForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    email: ['', Validators.required],
+    birthday: ['', Validators.required],
     login: ['', Validators.required],
     password: ['', Validators.required],
+    phone: ['', Validators.required],
   });
 
   constructor(
@@ -25,10 +30,10 @@ export class RegisterComponent {
   register(): void {
     this.submitted = true;
     const validEmail = this.emailValid(
-      this.registerForm.controls['login'].value || ''
+      this.registerForm.controls['firstName'].value || ''
     );
     const validPassword = this.passwordValid(
-      this.registerForm.controls['password'].value || ''
+      this.registerForm.controls['lastName'].value || ''
     );
 
     if (validEmail && validPassword) {
@@ -65,7 +70,7 @@ export class RegisterComponent {
       ); */
     } else if (!validEmail) {
       this.snackBar.open('E-mail ou senha inválida.', '', {
-        duration: 500000,
+        duration: 5000,
         panelClass: ['config-error-snackbar'],
         horizontalPosition: 'right',
         verticalPosition: 'top',

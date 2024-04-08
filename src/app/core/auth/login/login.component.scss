@@ -6,6 +6,7 @@
   gap: 8px;
 
   h1 {
+    color: var(--color-primary-light);
     font-weight: bold;
     font-size: 24px;
   }
@@ -23,6 +24,14 @@
       align-items: center;
       flex-direction: column;
       gap: 6px;
+
+      width: 100%;
+
+      width: 100%;
+
+      mat-form-field {
+        width: 260px;
+      }
     }
 
     button {

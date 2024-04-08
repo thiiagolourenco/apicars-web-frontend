@@ -65,7 +65,7 @@ export class LoginComponent {
       ); */
     } else if (!validEmail) {
       this.snackBar.open('E-mail ou senha inválida.', '', {
-        duration: 500000,
+        duration: 5000,
         panelClass: ['config-error-snackbar'],
         horizontalPosition: 'right',
         verticalPosition: 'top',
