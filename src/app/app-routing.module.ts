@@ -7,6 +7,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./core/auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./shared/modules/users/users.module').then((m) => m.UsersModule),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./shared/modules/cars/cars.module').then((m) => m.CarsModule),
+  },
 ];
 
 @NgModule({

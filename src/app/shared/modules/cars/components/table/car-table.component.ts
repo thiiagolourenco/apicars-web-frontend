@@ -8,6 +8,14 @@ import { Car } from '../../models/car.model';
   styleUrls: ['./car-table.component.scss'],
 })
 export class CarTableComponent {
-  @Input() public displayedColumns: string[] = [];
+  public displayedColumns: string[] = [
+    'id',
+    'user',
+    'yeear',
+    'licensePlate',
+    'model',
+    'color',
+    'actions',
+  ];
   @Input() public dataSource!: MatTableDataSource<Car>;
 }

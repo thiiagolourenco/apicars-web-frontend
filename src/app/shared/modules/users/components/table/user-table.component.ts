@@ -9,13 +9,25 @@ import { Car } from '../../../cars/models/car.model';
   styleUrls: ['./user-table.component.scss'],
 })
 export class UserTableComponent {
-  @Input() public displayedColumns: string[] = [];
+  public displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'birthday',
+    'phone',
+    'cars',
+    'actions',
+  ];
   @Input() public dataSource!: MatTableDataSource<User>;
 
   getCars(cars: Car[]): string {
-    const carModels: string[] = cars.map(
-      (car) => `${car.model} - ${car.yeear}`
-    );
-    return carModels.join(', ');
+    if (cars.length > 0) {
+      const carModels: string[] = cars.map(
+        (car) => `${car.model} - ${car.yeear}`
+      );
+      return carModels.join(', ');
+    }
+    return 'Usário não possui carros.';
   }
 }
