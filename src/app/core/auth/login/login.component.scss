@@ -1,80 +1,29 @@
-.card {
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  background-color: var(--color-title-in-primary);
-  transition: none !important;
-  box-shadow: none !important;
-}
 
-.title {
-  color: var(--color-title-in-primary);
-  width: 100%;
-  text-align: center;
-  position: inherit;
-}
-
-.background-img {
-  margin-top: -10rem;
-  height: auto;
-}
-
-.img {
-  width: 100%;
-  margin-top: -8rem;
-  padding-left: 2rem;
-  padding-right: 1rem;
-}
-
-.form-container {
-  color: var(--color-primary);
-  font-family: Nunito;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.form-content {
-  margin-right: 3em;
-  margin-left: 3em;
-}
-
-.form-full-width {
-  width: 100%;
-  color: #000000;
-}
-
-a {
-  color: inherit;
-  font-weight: bold;
-}
-
-button {
-  background-color: var(--color-secondary);
-  color: var(--color-title-in-primary);
-  width: 100%;
-  height: 42px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.forget-pass {
-  margin-top: -20px;
-}
-
-@media only screen and (min-width: 450px) {
-  .background-img {
-    height: 250px;
+  .btn {
+    font-size: 18px;
+    border-radius: 4px;
+    color: var(--dark-grey);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
   }
-  
-  .img {
-    width: 50%;
-    padding-top: 30px;
-    margin-left: 23%;
+
+  .btn-primary {
+    background-color: var(--yellow);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--light-text);
   }
 }
-
-@media only screen and (min-height: 800px) {
-  .forget-pass{
-    margin-top: 50px;
-  }
-}
-

@@ -1,27 +1,7 @@
-<mat-card class="card">
-    <mat-card-title class="title">Login</mat-card-title>
-    <img mat-card-image src="../../../assets/images/login-background.png" class="background-img" alt="Background image">
-    <img mat-card-image src="../../../assets/images/login.png" class="img" alt="Login image">
-    <div class="form-container">
-        <form [formGroup] = "loginForm">
-            <div class="form-content">
-                <mat-form-field appearance="outline" class="form-full-width">
-                    <mat-label>Informe seu usuário</mat-label>
-                    <input matInput formControlName="user" autocomplete="off"/>
-                    <mat-error *ngIf="loginForm.get('user')">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="form-full-width">
-                    <mat-label>Informe sua senha</mat-label>
-                    <input matInput formControlName="password" autocomplete="off" type="password"/>
-                    <mat-error *ngIf="loginForm.get('password')">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
-                <a href="" style="float: right">Esqueceu sua senha?</a>
-                <button mat-raised-button (click)="login()" [disabled] = "submitted"> Entrar </button>
-            </div>
-        </form>
-        <div class="forget-pass">
-            <p>Ainda não é usuário do Duna ?</p>
-            <a href=""> Cadastre-se</a>
-        </div>
+<apicars-header></apicars-header>
+<form class="form-group" [formGroup]="loginForm">
+    <div class="btn-wrapper">
+      <button mat-raised-button (click)="login()" [disabled]="submitted">Entrar</button>
     </div>
-</mat-card>
+</form>
+<apicars-footer></apicars-footer>

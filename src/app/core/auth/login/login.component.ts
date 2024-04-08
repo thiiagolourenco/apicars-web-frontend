@@ -1,38 +1,38 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/shared/models/login.model';
 
 @Component({
-  selector: 'app-login',
+  selector: 'apicars-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   public submitted = false;
 
-  //public user: UserLogin = new UserLogin('', '');
-
   public loginForm = this.fb.group({
-    user: ['', Validators.required],
+    login: ['', Validators.required],
     password: ['', Validators.required],
   });
 
   constructor(
     //private authService: AuthService,
     //private snackBar: MatSnackBar,
-    private router: Router,
+    //private router: Router,
     private fb: FormBuilder
   ) {}
 
   login(): void {
-    /* this.user.email = this.loginForm.controls['user'].value;
-    this.user.password = this.loginForm.controls['password'].value;
     this.submitted = true;
-    debugger;
-    const validEmail = this.emailValid();
-    const validPassword = this.passwordValid();
+    const validEmail = this.emailValid(
+      this.loginForm.controls['login'].value || ''
+    );
+    const validPassword = this.passwordValid(
+      this.loginForm.controls['password'].value || ''
+    );
 
-    if (validEmail && validPassword) {
+    /* if (validEmail && validPassword) {
       this.authService.login(this.user.email, this.user.password).subscribe(
         (success) => {
           if (success !== undefined) {
@@ -71,22 +71,22 @@ export class LoginComponent {
         horizontalPosition: "right",
         verticalPosition: "top",
       });
-    }
-    this.submitted = false; */
+    } */
+    this.submitted = false;
   }
 
-  emailValid() {
-    /* if (this.user.email !== undefined && this.user.email !== '') {
+  emailValid(email: String) {
+    if (email !== '') {
       return true;
     }
-    return false; */
+    return false;
   }
 
-  passwordValid() {
-    /* if (this.user.password !== undefined && this.user.password !== '') {
+  passwordValid(password: String) {
+    if (password !== '') {
       return true;
     }
-    return false; */
+    return false;
   }
 
   getErrorMessage() {
