@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../../models/user.model';
+import { Component, Input } from '@angular/core';
 import { Car } from '../../../cars/models/car.model';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'apicars-user-table',
@@ -9,6 +11,7 @@ import { Car } from '../../../cars/models/car.model';
   styleUrls: ['./user-table.component.scss'],
 })
 export class UserTableComponent {
+  @Input() public dataSource!: MatTableDataSource<User>;
   public displayedColumns: string[] = [
     'id',
     'firstName',
@@ -19,7 +22,18 @@ export class UserTableComponent {
     'cars',
     'actions',
   ];
-  @Input() public dataSource!: MatTableDataSource<User>;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(data: User): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('RESULT:', result);
+    });
+  }
 
   getCars(cars: Car[]): string {
     if (cars.length > 0) {
@@ -28,6 +42,6 @@ export class UserTableComponent {
       );
       return carModels.join(', ');
     }
-    return 'Usário não possui carros.';
+    return 'Usuário não possui carros.';
   }
 }
