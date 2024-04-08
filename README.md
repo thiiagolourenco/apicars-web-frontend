@@ -51,6 +51,10 @@ Rode `ng build` para buildar o projeto. Após o build os arquivos gerados estar�
 
 O projeto Angular já vem com o Karma configurado para testes, porém a ideia seria alterar para utilizar o Jest e o Test library. Caso você esteja trabalhando no projeto e se depare com o Karma saiba que não deu tempo de trocar as libs kkkkk. Basta rodar o comando `ng test` para executar os testes unitários via [Karma](https://karma-runner.github.io).
 
+## 🧗 Deploy
+
+Para realizar o deploy da aplicação primeiro
+
 ## 📝 Autor
 
 Por **Thiago Lourenço** dá uma olhadinha no [LinkedIn](https://www.linkedin.com/in/thiiagolourenco) e no meu [Medium](https://thiiagolourenco.medium.com/) ✌🏽 
