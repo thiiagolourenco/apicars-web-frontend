@@ -38,7 +38,10 @@ export class AuthService {
 
   private setSession(result: LoginResponse) {
     localStorage.setItem('token', result.token);
-    localStorage.setItem('user', JSON.stringify(result.user));
+    localStorage.setItem(
+      'user',
+      JSON.stringify({ name: result.name, userId: result.userId })
+    );
   }
 
   public isLoggedIn(): boolean {
@@ -46,7 +49,7 @@ export class AuthService {
     return !!userToken;
   }
 
-  public getUser(): User {
+  public getUser(): { name: string; userId: number } {
     let user;
     const auxAuthInfo = localStorage.getItem('user');
 
