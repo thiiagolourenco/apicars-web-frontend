@@ -1,8 +1,11 @@
-import { User } from 'src/app/shared/modules/users/models/user.model';
-
 export class LoginResponse {
-  constructor(public token: string, public user: User) {
+  constructor(
+    public token: string,
+    public name: string,
+    public userId: number
+  ) {
     this.token = token;
-    this.user = user;
+    this.name = name;
+    this.userId = userId;
   }
 }

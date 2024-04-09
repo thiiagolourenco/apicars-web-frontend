@@ -32,16 +32,12 @@ export class LoginComponent {
     if (!!userLogin && !!userPassword) {
       this.authService.login(userLogin, userPassword).subscribe(
         (data) => {
-          this.snackBar.open(
-            `Olá ${data.user.firstName}, como você está?`,
-            '',
-            {
-              duration: 5000,
-              panelClass: ['config-success-snackbar'],
-              horizontalPosition: 'center',
-              verticalPosition: 'top',
-            }
-          );
+          this.snackBar.open(`Olá ${data.name}, como você está?`, '', {
+            duration: 5000,
+            panelClass: ['config-success-snackbar'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
           this.router.navigate(['/users']);
         },
         (_error) => {
