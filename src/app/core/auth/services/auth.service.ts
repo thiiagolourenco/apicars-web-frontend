@@ -26,9 +26,11 @@ export class AuthService {
       );
   }
 
-  public register(user: Register) {
+  public register(user: Register): Observable<string> {
     return this.http
-      .post<User>(`${environment.URL_API}/auth/register`, user)
+      .post(`${environment.URL_API}/auth/register`, user, {
+        responseType: 'text',
+      })
       .pipe(take(1));
   }
 

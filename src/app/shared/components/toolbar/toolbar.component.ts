@@ -10,6 +10,14 @@ import { AuthService } from 'src/app/core/auth/services/auth.service';
 export class ToolbarComponent {
   constructor(private router: Router, private authService: AuthService) {}
 
+  navigateToLogin(): void {
+    this.router.navigate(['/']);
+  }
+
+  navigateToRegister(): void {
+    this.router.navigate(['/register']);
+  }
+
   navigateToUsers(): void {
     this.router.navigate(['/users']);
   }
