@@ -54,3 +54,23 @@
     margin: 0;
   }
 }
+
+.mat-progress-spinner {
+  width: 64px !important;
+  height: 64px !important;
+  
+  svg {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  circle {
+    stroke: var(--color-primary);
+  }
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

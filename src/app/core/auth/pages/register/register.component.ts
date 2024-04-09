@@ -60,6 +60,7 @@ export class RegisterComponent {
             verticalPosition: 'top',
           });
           this.router.navigate(['/']);
+          this.authService.getSubmitSubject().next(false);
         },
         (_error) => {
           this.snackBar.open('Não foi possível cadastrar o usuário.', '', {
@@ -68,10 +69,10 @@ export class RegisterComponent {
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
+          this.authService.getSubmitSubject().next(false);
         }
       );
     }
-    this.authService.getSubmitSubject().next(false);
   }
 
   formValid(newUser: Register): boolean {

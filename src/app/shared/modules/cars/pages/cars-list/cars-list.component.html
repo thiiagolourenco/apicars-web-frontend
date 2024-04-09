@@ -6,7 +6,14 @@
             <mat-icon>add</mat-icon>
         </button>
     </div>
-    <apicars-car-table [dataSource]="dataSource"></apicars-car-table>
+    <ng-container *ngIf="isLoading">
+        <div class="spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+        <apicars-car-table [dataSource]="dataSource"></apicars-car-table>
+    </ng-container>
 </div>
 
 

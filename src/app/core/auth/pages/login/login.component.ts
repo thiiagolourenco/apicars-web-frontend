@@ -43,6 +43,7 @@ export class LoginComponent {
             verticalPosition: 'top',
           });
           this.router.navigate(['/users']);
+          this.authService.getSubmitSubject().next(false);
         },
         (_error) => {
           this.snackBar.open('Login ou senha inválida.', '', {
@@ -51,10 +52,10 @@ export class LoginComponent {
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
+          this.authService.getSubmitSubject().next(false);
         }
       );
     }
-    this.authService.getSubmitSubject().next(false);
   }
 
   getErrorMessage(): string {
