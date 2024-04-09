@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { Car } from '../../models/car.model';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 
 @Component({
   selector: 'apicars-cars-list',
@@ -9,6 +11,8 @@ import { Car } from '../../models/car.model';
 })
 export class CarsListComponent implements OnInit {
   public dataSource!: MatTableDataSource<Car>;
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource([
@@ -21,5 +25,13 @@ export class CarsListComponent implements OnInit {
         color: ' Azul',
       },
     ]);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe((newUser) => {
+      console.log('RESULT:', newUser);
+    });
   }
 }

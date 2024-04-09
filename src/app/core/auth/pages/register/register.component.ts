@@ -52,7 +52,7 @@ export class RegisterComponent {
           this.snackBar.open(`${data.firstName} cadastrado com sucesso!`, '', {
             duration: 5000,
             panelClass: ['config-success-snackbar'],
-            horizontalPosition: 'right',
+            horizontalPosition: 'center',
             verticalPosition: 'top',
           });
           this.router.navigate(['/login']);
@@ -61,7 +61,7 @@ export class RegisterComponent {
           this.snackBar.open('Não foi possível cadastrar o usuário.', '', {
             duration: 5000,
             panelClass: ['config-error-snackbar'],
-            horizontalPosition: 'right',
+            horizontalPosition: 'center',
             verticalPosition: 'top',
           });
         }

@@ -38,7 +38,7 @@ export class LoginComponent {
             {
               duration: 5000,
               panelClass: ['config-success-snackbar'],
-              horizontalPosition: 'right',
+              horizontalPosition: 'center',
               verticalPosition: 'top',
             }
           );
@@ -48,7 +48,7 @@ export class LoginComponent {
           this.snackBar.open('Login ou senha inválida.', '', {
             duration: 5000,
             panelClass: ['config-error-snackbar'],
-            horizontalPosition: 'right',
+            horizontalPosition: 'center',
             verticalPosition: 'top',
           });
         }

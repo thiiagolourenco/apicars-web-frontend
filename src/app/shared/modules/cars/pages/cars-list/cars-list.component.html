@@ -1,2 +1,12 @@
 <apicars-toolbar></apicars-toolbar>
-<apicars-car-table [dataSource]="dataSource"></apicars-car-table>
+<div class="table-container">
+    <div class="title-table-container">
+        <h1>Listagem dos seus carros</h1>
+        <button mat-icon-button matTooltip="Adicionar carro" (click)="openDialog()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <apicars-car-table [dataSource]="dataSource"></apicars-car-table>
+</div>
+
+

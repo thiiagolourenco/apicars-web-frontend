@@ -2,13 +2,13 @@
   <img src="assets/favicon.png" alt="APICARS logo" width="40px" height="25px"/>
   <span>API CARS</span>
   <span class="spacer"></span>
-  <button mat-button aria-label="users button" (click)="navigateToUsers()">
+  <button mat-button aria-label="users button" matTooltip="Listagem de usuários" (click)="navigateToUsers()">
     Usuários
   </button>
-  <button *ngIf="isLogged()" mat-button aria-label="cars button" (click)="navigateToCars()">
+  <button *ngIf="isLogged()" mat-button aria-label="cars button" matTooltip="Listagem dos seus carros" (click)="navigateToCars()">
     Carros
   </button>
-  <button *ngIf="isLogged()" mat-icon-button aria-label="Logout icon button" (click)="logout()">
+  <button *ngIf="isLogged()" mat-icon-button aria-label="Logout icon button" matTooltip="Sair" (click)="logout()">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
