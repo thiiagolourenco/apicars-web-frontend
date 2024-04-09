@@ -22,7 +22,6 @@ export class UserTableComponent {
     'email',
     'birthday',
     'phone',
-    'cars',
     'actions',
   ];
 
