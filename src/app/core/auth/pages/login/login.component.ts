@@ -32,7 +32,7 @@ export class LoginComponent {
     if (!!userLogin && !!userPassword) {
       this.authService.login(userLogin, userPassword).subscribe(
         (data) => {
-          this.snackBar.open(`Olá ${data.name}, como você está?`, '', {
+          this.snackBar.open(`Olá ${data.firstName}, como você está?`, '', {
             duration: 5000,
             panelClass: ['config-success-snackbar'],
             horizontalPosition: 'center',

@@ -1,11 +1,11 @@
 export class LoginResponse {
   constructor(
     public token: string,
-    public name: string,
+    public firstName: string,
     public userId: number
   ) {
     this.token = token;
-    this.name = name;
+    this.firstName = firstName;
     this.userId = userId;
   }
 }
