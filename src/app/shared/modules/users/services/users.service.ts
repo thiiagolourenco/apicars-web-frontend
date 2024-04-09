@@ -1,10 +1,9 @@
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { EditableUser } from '../models/editable-user.model';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Injectable({
   providedIn: 'root',
