@@ -18,7 +18,11 @@ export class ToolbarComponent {
     this.router.navigate(['/cars']);
   }
 
-  isCarDisabeld(): boolean {
-    return !this.authService.isLoggedIn();
+  isLogged(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

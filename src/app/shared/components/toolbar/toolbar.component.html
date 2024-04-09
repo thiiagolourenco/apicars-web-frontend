@@ -5,10 +5,10 @@
   <button mat-button aria-label="users button" (click)="navigateToUsers()">
     Usuários
   </button>
-  <button mat-button aria-label="cars button" (click)="navigateToCars()" [disabled]="isCarDisabeld()">
+  <button *ngIf="isLogged()" mat-button aria-label="cars button" (click)="navigateToCars()">
     Carros
   </button>
-  <button mat-icon-button aria-label="Logout icon button">
+  <button *ngIf="isLogged()" mat-icon-button aria-label="Logout icon button" (click)="logout()">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
