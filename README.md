@@ -14,11 +14,10 @@
 
 <br>
 
-🚗 **ACESSE O SISTEMA ATRAVÉS DO LINK:** [APICARS](https://apicars.netlify.app)
-
 ## 💻 Projeto
 
 **FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico.
+**Obs.:** acesse o sistema através do link [🚗 APICARS](https://apicars.netlify.app)
 
 ## 📝 Pré-requisitos
 
