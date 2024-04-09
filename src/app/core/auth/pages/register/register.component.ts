@@ -1,6 +1,10 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { Role } from '../../models/role.model';
+import { Register } from '../../models/register';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'apicars-register',
@@ -21,79 +25,65 @@ export class RegisterComponent {
   });
 
   constructor(
-    //private authService: AuthService,
+    private authService: AuthService,
     private snackBar: MatSnackBar,
-    //private router: Router,
+    private router: Router,
     private fb: FormBuilder
   ) {}
 
   register(): void {
     this.submitted = true;
-    const validEmail = this.emailValid(
-      this.registerForm.controls['firstName'].value || ''
-    );
-    const validPassword = this.passwordValid(
-      this.registerForm.controls['lastName'].value || ''
-    );
 
-    if (validEmail && validPassword) {
-      /* this.authService.login(this.user.email, this.user.password).subscribe(
-        (success) => {
-          if (success !== undefined) {
-            this.snackBar.open('Olá, como você está ?', "", {
-              duration: 5000,
-              panelClass: ["config-snackbar"],
-              horizontalPosition: "right",
-              verticalPosition: "top",
-            });
-            this.router.navigate(['/dashboard']);
-          }
+    const newUser: Register = {
+      firstName: this.registerForm.controls['firstName'].value || '',
+      lastName: this.registerForm.controls['lastName'].value || '',
+      email: this.registerForm.controls['email'].value || '',
+      birthday: this.registerForm.controls['birthday'].value || '',
+      login: this.registerForm.controls['login'].value || '',
+      password: this.registerForm.controls['password'].value || '',
+      role: Role.ADMIN,
+      phone: this.registerForm.controls['phone'].value || '',
+      cars: [],
+    };
+
+    if (this.formValid(newUser)) {
+      this.authService.register(newUser).subscribe(
+        (data) => {
+          this.snackBar.open(`${data.firstName} cadastrado com sucesso!`, '', {
+            duration: 5000,
+            panelClass: ['config-success-snackbar'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+          this.router.navigate(['/']);
         },
-        (error) => {
-          if (error.error.error !== undefined) {
-            this.snackBar.open(error.error.error, "", {
-              duration: 5000,
-              panelClass: ["config-snackbar"],
-              horizontalPosition: "right",
-              verticalPosition: "top",
-            });
-          } else {
-            this.snackBar.open('O serviço será restabelecido em breve.', "", {
-              duration: 5000,
-              panelClass: ["config-snackbar"],
-              horizontalPosition: "right",
-              verticalPosition: "top",
-            });
-          }
-          this.submitted = false;
+        (_error) => {
+          this.snackBar.open('Não foi possível cadastrar o usuário.', '', {
+            duration: 5000,
+            panelClass: ['config-error-snackbar'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
         }
-      ); */
-    } else if (!validEmail) {
-      this.snackBar.open('E-mail ou senha inválida.', '', {
-        duration: 5000,
-        panelClass: ['config-error-snackbar'],
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-      });
+      );
+
+      this.submitted = false;
     }
-    this.submitted = false;
   }
 
-  emailValid(email: String) {
-    if (email !== '') {
-      return true;
-    }
-    return false;
-  }
-
-  passwordValid(password: String) {
-    if (password !== '') {
-      return true;
-    }
-    return false;
+  formValid(newUser: Register): boolean {
+    return (
+      !!newUser.firstName &&
+      !!newUser.lastName &&
+      !!newUser.email &&
+      !!newUser.birthday &&
+      !!newUser.login &&
+      !!newUser.password &&
+      !!newUser.phone
+    );
   }
 
   getErrorMessage() {
-    return 'Por favor, preencha o campo';
+    return 'Por favor, preencha o campo.';
   }
 }

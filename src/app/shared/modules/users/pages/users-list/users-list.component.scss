@@ -1,0 +1,16 @@
+.table-container{
+    h1 {
+        color: var(--color-primary-light);
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    mat-icon {
+        color: var(--color-primary)
+    }
+    
+    gap: 8px;
+
+    padding: 0px 40px;
+}

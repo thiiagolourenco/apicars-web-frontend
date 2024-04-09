@@ -32,10 +32,10 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="openDialog(row)">
+        <button mat-icon-button matTooltip="Editar usuário" (click)="openDialog(row)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button matTooltip="Excluir usuário" (click)="deleteUser(row)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-cell>

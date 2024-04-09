@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../../models/user.model';
-import { Role } from 'src/app/core/auth/models/role.model';
-import { Car } from '../../../cars/models/car.model';
+import { UsersService } from '../../services/users.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { UtilService } from 'src/app/shared/services/util.service';
 
 @Component({
   selector: 'apicars-users-list',
@@ -12,20 +14,32 @@ import { Car } from '../../../cars/models/car.model';
 export class UsersListComponent implements OnInit {
   public dataSource!: MatTableDataSource<User>;
 
+  constructor(
+    private userService: UsersService,
+    private snackBar: MatSnackBar,
+    private utilService: UtilService
+  ) {
+    this.userService.users$.subscribe((users) => {
+      this.dataSource = new MatTableDataSource(users);
+    });
+  }
+
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource([
-      {
-        id: 1,
-        firstName: 'Thiago',
-        lastName: 'Lourenço',
-        email: 'thiago@world.com',
-        birthday: '1990-05-01',
-        login: 'thiagologin',
-        password: '123456789',
-        role: Role['ADMIN' as keyof typeof Role],
-        phone: '988888888',
-        cars: [] as Car[],
+    this.userService.getAllUsers().subscribe(
+      (data) => {
+        const currentUsers = this.userService.getUsersSubject().getValue();
+        if (this.utilService.compareLists(currentUsers, data)) {
+          this.userService.getUsersSubject().next(data);
+        }
       },
-    ]);
+      (_error) => {
+        this.snackBar.open('Não foi possível listar os usuários.', '', {
+          duration: 5000,
+          panelClass: ['config-error-snackbar'],
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+      }
+    );
   }
 }
