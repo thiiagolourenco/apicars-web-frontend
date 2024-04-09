@@ -4,6 +4,7 @@ import { User } from '../../models/user.model';
 import { UsersService } from '../../services/users.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { UtilService } from 'src/app/shared/services/util.service';
 
 @Component({
   selector: 'apicars-users-list',
@@ -15,7 +16,8 @@ export class UsersListComponent implements OnInit {
 
   constructor(
     private userService: UsersService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private utilService: UtilService
   ) {
     this.userService.users$.subscribe((users) => {
       this.dataSource = new MatTableDataSource(users);
@@ -26,12 +28,12 @@ export class UsersListComponent implements OnInit {
     this.userService.getAllUsers().subscribe(
       (data) => {
         const currentUsers = this.userService.getUsersSubject().getValue();
-        if (this.compareLists(currentUsers, data)) {
+        if (this.utilService.compareLists(currentUsers, data)) {
           this.userService.getUsersSubject().next(data);
         }
       },
       (_error) => {
-        this.snackBar.open('Não foi possível lista os usuários.', '', {
+        this.snackBar.open('Não foi possível listar os usuários.', '', {
           duration: 5000,
           panelClass: ['config-error-snackbar'],
           horizontalPosition: 'center',
@@ -39,19 +41,5 @@ export class UsersListComponent implements OnInit {
         });
       }
     );
-  }
-
-  compareLists(oldList: User[], newList: User[]): boolean {
-    if (oldList.length !== newList.length) {
-      return true;
-    }
-
-    for (let i = 0; i < oldList.length; i++) {
-      if (oldList[i].id !== newList[i].id) {
-        return true;
-      }
-    }
-
-    return false;
   }
 }

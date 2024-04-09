@@ -7,7 +7,6 @@ import { UsersService } from '../../services/users.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { EditableUser } from '../../models/editable-user.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'apicars-user-table',
@@ -28,7 +27,6 @@ export class UserTableComponent {
   ];
 
   constructor(
-    private router: Router,
     public dialog: MatDialog,
     private userService: UsersService,
     private snackBar: MatSnackBar

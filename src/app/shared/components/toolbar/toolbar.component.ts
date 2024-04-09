@@ -23,7 +23,7 @@ export class ToolbarComponent {
   }
 
   logout(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
     this.authService.logout();
   }
 }

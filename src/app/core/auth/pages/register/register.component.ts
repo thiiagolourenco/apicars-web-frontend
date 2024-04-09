@@ -55,7 +55,7 @@ export class RegisterComponent {
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
-          this.router.navigate(['/login']);
+          this.router.navigate(['/']);
         },
         (_error) => {
           this.snackBar.open('Não foi possível cadastrar o usuário.', '', {

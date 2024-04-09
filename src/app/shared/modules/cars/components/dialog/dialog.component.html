@@ -1,8 +1,32 @@
-<h2 mat-dialog-title>Hi {{data.model}}</h2>
-<mat-dialog-content>
-  <p>Dialog Content</p>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
+<div class="container">
+  <h2 mat-dialog-title>Edição do carro {{data.model}}</h2>
+  <mat-dialog-content>
+    <div class="form-container">
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe o ano</mat-label>
+          <input matInput [(ngModel)]="data.yeear" autocomplete="off"/>
+          <mat-error *ngIf="data.yeear == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe sua placa</mat-label>
+          <input matInput [(ngModel)]="data.licensePlate" autocomplete="off"/>
+          <mat-error *ngIf="data.licensePlate == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe o modelo</mat-label>
+          <input matInput [(ngModel)]="data.model" autocomplete="off"/>
+          <mat-error *ngIf="data.model == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe a cor</mat-label>
+          <input matInput [(ngModel)]="data.color" autocomplete="off"/>
+          <mat-error *ngIf="data.color == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="cancel-button" mat-flat-button (click)="onNoClick()">Cancelar</button>
+    <button class="save-button" mat-flat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+  </mat-dialog-actions>
+</div>
+  

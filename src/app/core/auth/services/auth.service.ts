@@ -46,7 +46,7 @@ export class AuthService {
     return !!userToken;
   }
 
-  public getUser() {
+  public getUser(): User {
     let user;
     const auxAuthInfo = localStorage.getItem('user');
 

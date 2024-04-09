@@ -8,6 +8,9 @@ import { CarsListComponent } from './pages/cars-list/cars-list.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CarsService } from './services/cars.service';
+import { AuthService } from 'src/app/core/auth/services/auth.service';
+import { UtilService } from '../../services/util.service';
 
 @NgModule({
   declarations: [CarTableComponent, CarsListComponent, DialogComponent],
@@ -19,5 +22,6 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     FormsModule,
   ],
+  providers: [CarsService, AuthService, UtilService],
 })
 export class CarsModule {}

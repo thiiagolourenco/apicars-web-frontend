@@ -1,42 +1,45 @@
 <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="user">
-      <mat-header-cell *matHeaderCellDef>Dono</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.user }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="yeear">
-      <mat-header-cell *matHeaderCellDef>Dono</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.yeear }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="licensePlate">
-      <mat-header-cell *matHeaderCellDef>Placa</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.licensePlate }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="model">
-      <mat-header-cell *matHeaderCellDef>Modelo</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.model }}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef>Cor</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.color }}</mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="user">
+    <mat-header-cell *matHeaderCellDef>Proprietário</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.user }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="yeear">
+    <mat-header-cell *matHeaderCellDef>Ano</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.yeear }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="licensePlate">
+    <mat-header-cell *matHeaderCellDef>Placa</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.licensePlate }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="model">
+    <mat-header-cell *matHeaderCellDef>Modelo</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.model }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="color">
+    <mat-header-cell *matHeaderCellDef>Cor</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.color }}</mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
-      <mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="openDialog(row)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>delete</mat-icon>
-        </button>
-      </mat-cell>
-    </ng-container>
-  
-    <mat-header-row *matHeaderRowDef="displayedColumns"> </mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-  </mat-table>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button matTooltip="Editar carro" (click)="openDialog(row)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Excluir carro" (click)="deleteCar(row)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"> </mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+<ng-container *ngIf="dataSource.data.length === 0">
+  <h1>Usuário não possui carros.</h1>
+</ng-container>
   

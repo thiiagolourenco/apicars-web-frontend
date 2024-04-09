@@ -21,15 +21,15 @@ export class CarsService {
 
   constructor(private http: HttpClient) {}
 
-  create(car: Car) {
+  create(car: EditableCar) {
     return this.http
       .post<Car>(`${environment.URL_API}/api/cars`, car, httpOptions)
       .pipe(take(1));
   }
 
-  getCarByUser(userId: string): Observable<Car[]> {
+  getCarByUser(userId: number): Observable<Car[]> {
     return this.http.get<Car[]>(
-      `${environment.URL_API}/api/cars/${userId}`,
+      `${environment.URL_API}/api/cars/by-user/${userId}`,
       httpOptions
     );
   }

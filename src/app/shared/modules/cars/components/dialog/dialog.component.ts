@@ -16,4 +16,8 @@ export class DialogComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+  getErrorMessage() {
+    return 'Por favor, preencha o campo.';
+  }
 }

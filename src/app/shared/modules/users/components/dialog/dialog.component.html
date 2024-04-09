@@ -1,38 +1,36 @@
 <div class="container">
-<h2 mat-dialog-title>Edição do usuário {{data.firstName}}</h2>
-<mat-dialog-content>
-  <div class="form-container">
-    <mat-form-field appearance="outline" class="form-full-width">
-        <mat-label>Informe seu nome</mat-label>
-        <input matInput [(ngModel)]="data.firstName" autocomplete="off"/>
-        <mat-error *ngIf="data.firstName == ''">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="form-full-width">
-        <mat-label>Informe seu sobrenome</mat-label>
-        <input matInput [(ngModel)]="data.lastName" autocomplete="off"/>
-        <mat-error *ngIf="data.lastName == ''">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="form-full-width">
-        <mat-label>Informe seu email</mat-label>
-        <input matInput [(ngModel)]="data.email" autocomplete="off" type="email"/>
-        <mat-error *ngIf="data.email == ''">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="form-full-width">
-        <mat-label>Informe sua data de nascimento</mat-label>
-        <input matInput [(ngModel)]="data.birthday" autocomplete="off" type="date"/>
-        <mat-error *ngIf="data.birthday == ''">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="form-full-width">
-        <mat-label>Informe um número para contato</mat-label>
-        <input matInput [(ngModel)]="data.phone" autocomplete="off" type="tel"/>
-        <mat-error *ngIf="data.phone == ''">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button class="cancel-button" mat-flat-button (click)="onNoClick()">Cancelar</button>
-  <button class="save-button" mat-flat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
-</mat-dialog-actions>
-
-
+  <h2 mat-dialog-title>Edição do usuário {{data.firstName}}</h2>
+  <mat-dialog-content>
+    <div class="form-container">
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe seu nome</mat-label>
+          <input matInput [(ngModel)]="data.firstName" autocomplete="off"/>
+          <mat-error *ngIf="data.firstName == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe seu sobrenome</mat-label>
+          <input matInput [(ngModel)]="data.lastName" autocomplete="off"/>
+          <mat-error *ngIf="data.lastName == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe seu email</mat-label>
+          <input matInput [(ngModel)]="data.email" autocomplete="off" type="email"/>
+          <mat-error *ngIf="data.email == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe sua data de nascimento</mat-label>
+          <input matInput [(ngModel)]="data.birthday" autocomplete="off" type="date"/>
+          <mat-error *ngIf="data.birthday == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Informe um número para contato</mat-label>
+          <input matInput [(ngModel)]="data.phone" autocomplete="off" type="tel"/>
+          <mat-error *ngIf="data.phone == ''">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="cancel-button" mat-flat-button (click)="onNoClick()">Cancelar</button>
+    <button class="save-button" mat-flat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+  </mat-dialog-actions>
 </div>

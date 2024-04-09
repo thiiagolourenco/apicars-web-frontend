@@ -12,7 +12,15 @@ export class User {
     public password: string,
     public role: Role,
     public phone: string,
-    public cars: Car[]
+    public cars: Car[],
+    public lastLogin?: string,
+    public createdAt?: string,
+    public enabled?: boolean,
+    public accountNonLocked?: boolean,
+    public accountNonExpired?: boolean,
+    public credentialsNonExpired?: boolean,
+    public authorities?: { authority: string }[],
+    public username?: string
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -24,5 +32,13 @@ export class User {
     this.role = role;
     this.phone = phone;
     this.cars = cars;
+    this.lastLogin = lastLogin;
+    this.createdAt = createdAt;
+    this.enabled = enabled;
+    this.accountNonLocked = accountNonLocked;
+    this.accountNonExpired = accountNonExpired;
+    this.credentialsNonExpired = credentialsNonExpired;
+    this.authorities = authorities;
+    this.username = username;
   }
 }

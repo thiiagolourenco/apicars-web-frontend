@@ -10,10 +10,11 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { UsersService } from './services/users.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UtilService } from '../../services/util.service';
 
 @NgModule({
   declarations: [UserTableComponent, UsersListComponent, DialogComponent],
-  providers: [UsersService],
+  providers: [UsersService, UtilService],
   imports: [
     CommonModule,
     SharedModule,
