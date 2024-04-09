@@ -1,5 +1,5 @@
-import { User } from '../../models/user.model';
 import { Component, Inject } from '@angular/core';
+import { EditableUser } from '../../models/editable-user.model';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -10,10 +10,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User
+    @Inject(MAT_DIALOG_DATA) public data: EditableUser
   ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  getErrorMessage() {
+    return 'Por favor, preencha o campo.';
   }
 }

@@ -8,33 +8,30 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-//import { AuthService } from '../services/auth/auth.service';
+import { AuthService } from '../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate, CanLoad {
-  constructor(
-    //private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  /* private accessVerify() {
+  private accessVerify() {
     if (this.authService.isLoggedIn()) {
       return true;
     }
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/']);
     return false;
-  } */
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return true; //this.accessVerify();
+    return this.accessVerify();
   }
 
   canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
-    return true; //this.accessVerify();
+    return this.accessVerify();
   }
 }

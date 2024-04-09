@@ -1,0 +1,27 @@
+.container {
+    h2 {
+        margin-bottom: 16px;
+        color: var(--color-primary-light);
+        font-weight: bold;
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    mat-dialog-actions {
+        justify-content: center;
+        
+        .cancel-button {
+            color: var(--color-background);
+            background: var(--red);
+        }
+
+        .save-button {        
+            color: var(--color-background);
+            background: var(--color-primary);
+        }
+    }
+}

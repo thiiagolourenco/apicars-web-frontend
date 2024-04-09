@@ -7,18 +7,20 @@ import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { RegisterComponent } from './pages/register/register.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from '../guard/auth.guard';
 
 @NgModule({
   imports: [
-    SharedModule,
-    MaterialModule,
     FormsModule,
     CommonModule,
+    SharedModule,
+    MaterialModule,
     AuthRoutingModule,
     ReactiveFormsModule,
   ],
   declarations: [LoginComponent, RegisterComponent],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AuthModule {}
