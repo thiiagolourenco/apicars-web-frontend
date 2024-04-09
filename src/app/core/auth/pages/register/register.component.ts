@@ -48,8 +48,8 @@ export class RegisterComponent {
 
     if (this.formValid(newUser)) {
       this.authService.register(newUser).subscribe(
-        (data) => {
-          this.snackBar.open(`${data.firstName} cadastrado com sucesso!`, '', {
+        (_data) => {
+          this.snackBar.open(`Usuário cadastrado com sucesso!`, '', {
             duration: 5000,
             panelClass: ['config-success-snackbar'],
             horizontalPosition: 'center',
