@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/shared/modules/users/models/user.model';
-import { LoginResponse } from '../models/login.model copy';
+import { LoginResponse } from '../models/login-response.model';
+import { Register } from '../models/register';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +26,7 @@ export class AuthService {
       );
   }
 
-  public register(user: User) {
+  public register(user: Register) {
     return this.http
       .post<User>(`${environment.URL_API}/auth/register`, user)
       .pipe(take(1));
