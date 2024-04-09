@@ -40,7 +40,7 @@ export class AuthService {
     localStorage.setItem('token', result.token);
     localStorage.setItem(
       'user',
-      JSON.stringify({ firstName: result.firstName, userId: result.userId })
+      JSON.stringify({ firstName: result.firstName, id: result.id })
     );
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
     return !!userToken;
   }
 
-  public getUser(): { firstName: string; userId: number } {
+  public getUser(): { firstName: string; id: number } {
     let user;
     const auxAuthInfo = localStorage.getItem('user');
 

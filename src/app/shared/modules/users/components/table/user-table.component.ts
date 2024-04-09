@@ -105,16 +105,6 @@ export class UserTableComponent {
     });
   }
 
-  getCars(cars: Car[]): string {
-    if (cars.length > 0) {
-      const carModels: string[] = cars.map(
-        (car) => `${car.model} - ${car.yeear}`
-      );
-      return carModels.join(', ');
-    }
-    return 'Usuário não possui carros.';
-  }
-
   deleteUser(user: User): void {
     this.userService.deleteUserById(user.id).subscribe(
       () => {
