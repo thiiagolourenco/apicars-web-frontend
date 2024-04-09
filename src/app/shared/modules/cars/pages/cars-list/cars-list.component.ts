@@ -16,6 +16,7 @@ import { EditableCar } from '../../models/editable-car.model';
 })
 export class CarsListComponent implements OnInit {
   public dataSource!: MatTableDataSource<Car>;
+  public isLoading!: boolean;
 
   constructor(
     public dialog: MatDialog,
@@ -24,12 +25,17 @@ export class CarsListComponent implements OnInit {
     private authService: AuthService,
     private utilService: UtilService
   ) {
+    this.carService.loading$.subscribe((loading) => {
+      this.isLoading = loading;
+    });
+
     this.carService.cars$.subscribe((cars) => {
       this.dataSource = new MatTableDataSource(cars);
     });
   }
 
   ngOnInit(): void {
+    this.carService.getLoadingSubject().next(true);
     this.carService.getCarByUser(this.authService.getUser().id).subscribe(
       (data) => {
         const currentCars = this.carService.getCarsSubject().getValue();
@@ -46,6 +52,7 @@ export class CarsListComponent implements OnInit {
         });
       }
     );
+    this.carService.getLoadingSubject().next(false);
   }
 
   openDialog(): void {

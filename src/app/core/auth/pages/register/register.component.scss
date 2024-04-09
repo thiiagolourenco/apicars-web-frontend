@@ -38,6 +38,11 @@
 
       background-color: var(--color-primary);
       color: var(--color-background);
+
+      &:disabled {
+        background-color: rgba(0, 0, 0, .12);
+        color: rgb(0 0 0 / 26%);
+      }
     }
   }
 

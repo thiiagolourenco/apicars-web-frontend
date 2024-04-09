@@ -41,7 +41,7 @@
                     <mat-error *ngIf="registerForm.get('phone')">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </div>
-            <button mat-raised-button (click)="register()" [disabled]="submitted">Cadastrar</button>
+            <button mat-raised-button (click)="register()" [disabled]="isLoading">{{isLoading ? 'Aguarde' : 'Cadastrar'}}</button>
         </form>
         
         <div class="login">

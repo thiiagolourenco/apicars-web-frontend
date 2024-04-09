@@ -16,7 +16,9 @@
                     <mat-error *ngIf="loginForm.get('password')">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
             </div>
-            <button mat-raised-button  aria-label="login button" (click)="login()" [disabled]="submitted">Entrar</button>
+            <button mat-raised-button  aria-label="login button" (click)="login()" [disabled]="isLoading">
+                {{isLoading ? 'Aguarde' : 'Entrar'}}
+            </button>
         </form>
         
         <div class="register">

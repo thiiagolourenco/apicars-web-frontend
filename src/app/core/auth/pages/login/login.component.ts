@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  public submitted = false;
+  public isLoading: boolean = false;
 
   public loginForm = this.fb.group({
     login: ['', Validators.required],
@@ -22,10 +22,14 @@ export class LoginComponent {
     private snackBar: MatSnackBar,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.authService.submitted$.subscribe((data) => {
+      this.isLoading = data;
+    });
+  }
 
   login(): void {
-    this.submitted = true;
+    this.authService.getSubmitSubject().next(true);
     const userLogin = this.loginForm.controls['login'].value || '';
     const userPassword = this.loginForm.controls['password'].value || '';
 
@@ -39,6 +43,7 @@ export class LoginComponent {
             verticalPosition: 'top',
           });
           this.router.navigate(['/users']);
+          this.authService.getSubmitSubject().next(false);
         },
         (_error) => {
           this.snackBar.open('Login ou senha inválida.', '', {
@@ -47,10 +52,9 @@ export class LoginComponent {
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
+          this.authService.getSubmitSubject().next(false);
         }
       );
-
-      this.submitted = false;
     }
   }
 

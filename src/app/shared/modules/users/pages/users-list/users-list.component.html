@@ -1,5 +1,12 @@
 <apicars-toolbar></apicars-toolbar>
 <div class="table-container">
     <h1>Listagem de usuários cadastrados</h1>
-    <apicars-user-table [dataSource]="dataSource"></apicars-user-table>
+    <ng-container *ngIf="isLoading">
+        <div class="spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+        <apicars-user-table [dataSource]="dataSource"></apicars-user-table>
+    </ng-container>
 </div>

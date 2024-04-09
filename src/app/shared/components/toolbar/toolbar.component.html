@@ -2,7 +2,7 @@
   <img src="assets/favicon.png" alt="APICARS logo" width="40px" height="25px"/>
   <span>API CARS</span>
   <span class="spacer"></span>
-  <button mat-button aria-label="login button" matTooltip="Login" (click)="navigateToLogin()">
+  <button *ngIf="!isLogged()" mat-button aria-label="login button" matTooltip="Login" (click)="navigateToLogin()">
     Login
   </button>
   <button *ngIf="!isLogged()" mat-button aria-label="register button" matTooltip="Cadastro de usuários" (click)="navigateToRegister()">

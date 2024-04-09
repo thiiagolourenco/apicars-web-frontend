@@ -9,6 +9,9 @@ import { EditableUser } from '../models/editable-user.model';
   providedIn: 'root',
 })
 export class UsersService {
+  private loadingSubject = new BehaviorSubject<boolean>(false);
+  loading$: Observable<boolean> = this.loadingSubject.asObservable();
+
   private usersSubject = new BehaviorSubject<User[]>([]);
   users$: Observable<User[]> = this.usersSubject.asObservable();
 
@@ -35,5 +38,9 @@ export class UsersService {
 
   getUsersSubject(): BehaviorSubject<User[]> {
     return this.usersSubject;
+  }
+
+  getLoadingSubject(): BehaviorSubject<boolean> {
+    return this.loadingSubject;
   }
 }

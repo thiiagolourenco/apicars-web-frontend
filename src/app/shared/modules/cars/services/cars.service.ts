@@ -16,6 +16,9 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class CarsService {
+  private loadingSubject = new BehaviorSubject<boolean>(false);
+  loading$: Observable<boolean> = this.loadingSubject.asObservable();
+
   private carsSubject = new BehaviorSubject<Car[]>([]);
   cars$: Observable<Car[]> = this.carsSubject.asObservable();
 
@@ -58,5 +61,9 @@ export class CarsService {
 
   getCarsSubject(): BehaviorSubject<Car[]> {
     return this.carsSubject;
+  }
+
+  getLoadingSubject(): BehaviorSubject<boolean> {
+    return this.loadingSubject;
   }
 }
