@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../../models/user.model';
-import { UsersService } from '../../services/users.service';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { UsersService } from '../../services/users.service';
+import { MatTableDataSource } from '@angular/material/table';
 import { UtilService } from 'src/app/shared/services/util.service';
 
 @Component({

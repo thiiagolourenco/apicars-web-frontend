@@ -1,8 +1,7 @@
-import { Observable, take, tap } from 'rxjs';
+import { BehaviorSubject, Observable, delay, take, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { User } from 'src/app/shared/modules/users/models/user.model';
 import { LoginResponse } from '../models/login-response.model';
 import { Register } from '../models/register';
 
@@ -10,6 +9,9 @@ import { Register } from '../models/register';
   providedIn: 'root',
 })
 export class AuthService {
+  private submittedSubject = new BehaviorSubject<boolean>(false);
+  submitted$: Observable<boolean> = this.submittedSubject.asObservable();
+
   constructor(private http: HttpClient) {}
 
   public login(login: string, password: string): Observable<LoginResponse> {
@@ -59,5 +61,9 @@ export class AuthService {
       user = JSON.parse(auxAuthInfo);
     }
     return user;
+  }
+
+  getSubmitSubject(): BehaviorSubject<boolean> {
+    return this.submittedSubject;
   }
 }

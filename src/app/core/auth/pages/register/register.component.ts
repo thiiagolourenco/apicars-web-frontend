@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  public submitted = false;
+  public isLoading: boolean = false;
 
   public registerForm = this.fb.group({
     firstName: ['', Validators.required],
@@ -29,10 +29,14 @@ export class RegisterComponent {
     private snackBar: MatSnackBar,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.authService.submitted$.subscribe((data) => {
+      this.isLoading = data;
+    });
+  }
 
   register(): void {
-    this.submitted = true;
+    this.authService.getSubmitSubject().next(true);
 
     const newUser: Register = {
       firstName: this.registerForm.controls['firstName'].value || '',
@@ -66,9 +70,8 @@ export class RegisterComponent {
           });
         }
       );
-
-      this.submitted = false;
     }
+    this.authService.getSubmitSubject().next(false);
   }
 
   formValid(newUser: Register): boolean {

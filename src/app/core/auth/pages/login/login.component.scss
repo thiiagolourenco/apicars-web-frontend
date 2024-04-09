@@ -33,19 +33,23 @@
 
       width: 100%;
 
-      width: 100%;
-
       mat-form-field {
         width: 260px;
       }
     }
 
     button {
+      
       width: 260px;
       height: 40px;
 
       background-color: var(--color-primary);
       color: var(--color-background);
+
+      &:disabled {
+        background-color: rgba(0, 0, 0, .12);
+        color: rgb(0 0 0 / 26%);
+      }
     }
   }
 
