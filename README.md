@@ -18,7 +18,7 @@
 
 **FRONTEND PARA API CARS** - Criação de um frontend em Angular para a API Rest de usuários e seus carros proposto no desafio técnico.
 <br/>
-**Obs.:** acesse o sistema através do link [🚗 APICARS](https://apicars.netlify.app)
+**Obs.:** acesse o sistema através do link: 🚗 [APICARS](https://apicars.netlify.app)
 
 ## 📝 Pré-requisitos
 
