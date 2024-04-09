@@ -30,7 +30,7 @@ export class CarsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.carService.getCarByUser(this.authService.getUser().userId).subscribe(
+    this.carService.getCarByUser(this.authService.getUser().id).subscribe(
       (data) => {
         const currentCars = this.carService.getCarsSubject().getValue();
         if (this.utilService.compareLists(currentCars, data)) {
@@ -49,7 +49,7 @@ export class CarsListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const currentUserId = this.authService.getUser().userId;
+    const currentUserId = this.authService.getUser().id;
 
     const dialogRef = this.dialog.open(DialogComponent, {
       data: new EditableCar(currentUserId, '', '', '', ''),
